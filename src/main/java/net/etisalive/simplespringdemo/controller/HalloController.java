@@ -10,6 +10,9 @@ public class HalloController {
 
     @GetMapping("/api/name")
     public String name(String name) {
+        if (name != null && "".equals(name)) {
+            return "Hey noname";
+        }
         return "Hallo " + name;
     }
 }
